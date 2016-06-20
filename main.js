@@ -159,3 +159,28 @@ function diagonalSum(arr) {
 //     }
 //   }
 // }
+
+// Matrix Rotation
+
+function rotateMatrix(matrix) {
+  var rows = matrix.length;
+  var columns = matrix[0].length;
+  var dimensions = rows + "x" + columns;
+
+  var newMatrix = [];
+  var counter;
+
+  for(var i = 0; i < columns; i++) {
+    newMatrix.push([]);
+    counter = 0;
+    for(var j = rows - 1; j >= 0; j--) {
+      newMatrix[i][counter] = matrix[j][i];
+      counter += 1;
+    }
+  }
+  console.log(dimensions);
+  return newMatrix;
+}
+
+console.log(rotateMatrix([[1, 64, 23],
+              [22, 50, 2]]));
