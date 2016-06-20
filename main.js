@@ -81,4 +81,81 @@ function upDown(arr) {
   return result;
 }
 
-console.log(upDown([6,3,5,4,3,4,4,5]));
+// console.log(upDown([6,3,5,4,3,4,4,5]));
+
+// Longest String
+
+function longestString(arr) {
+  var result = {};
+  for(var i = 0; i < arr.length - 1; i++) {
+    if(arr[i].length < arr[i + 1].length) {
+      result = {};
+      result[arr[i + 1]] = arr[i + 1].length;
+    } else if(arr[i].length > arr[i + 1].length) {
+      result = {};
+      result[arr[i]] = arr[i].length;
+    }
+  }
+  return result;
+}
+
+// console.log(longestString(["truck", "sidewalk", "book"]))
+
+// Find greater
+
+function findGreater(arr, num) {
+  var result = [];
+  for(var i = 0; i < arr.length; i++) {
+    if(arr[i] > num) {
+      result.push(arr[i]);
+    }
+  }
+  return result;
+}
+
+// console.log(findGreater([1, 2, 3, 4, 5, 6, 7, 8], 5));
+
+// Combine & sort
+
+function comSort(array1, array2) {
+  return array1.concat(array2).sort();
+}
+
+// console.log(comSort(["cat", "dog", "fish", "zebra"], ["lion", "aardvark", "gorilla"]));
+
+// Diagonal sum
+
+function diagonalSum(arr) {
+  var sum = 0;
+  var index = arr.length - 1;
+  for(var i = arr.length - 1; i >= 0; i--) {
+    sum += arr[i][index];
+    index--;
+  }
+  return sum;
+}
+
+// console.log(diagonalSum([[2, 5, 1, 3, 9],
+//
+//           [4, 1, 3, 0, 8],
+//
+//           [1, 0, 9, 7, 6],
+//
+//           [1, 7, 7, 3, 0],
+//
+//           [3, 3, 8, 2, 4]]))
+
+// Parens Checker
+
+// function parensChecker(parenString) {
+//   var parenArray = parenString.split("");
+//   var left = 0;
+//   var right = 0;
+//   for(var i = 0; i < parenArray.length; i++) {
+//     if(parenArray[i] === ")") {
+//       return false;
+//     } else if(parenArray[parenArray.length - 1] === "(") {
+//       return false;
+//     }
+//   }
+// }
